@@ -186,8 +186,8 @@ evaluateGenePairs = function(surv, gepAll, nbrs = 10, sets, toi = "YES", repeats
     genePairs.pval = matrix(NA,length(meanCor),2)
     
     for(i in 1:length(meanCor)){
-      genePairs.pval[i,1] = which(sort(meanCor[as.numeric(pathways[[genePairs[i,1]]])], decreasing = T) == meanCor[i])[1]/nrow(gep)
-      genePairs.pval[i,2] = which(sort(meanCor[as.numeric(pathways[[genePairs[i,2]]])], decreasing = T) == meanCor[i])[1]/nrow(gep)
+      genePairs.pval[i,1] = which(sort(meanCor[as.numeric(pathways[[sets[i,1]]])], decreasing = T) == meanCor[i])[1]/nrow(gep)
+      genePairs.pval[i,2] = which(sort(meanCor[as.numeric(pathways[[sets[i,2]]])], decreasing = T) == meanCor[i])[1]/nrow(gep)
       
     }
     sigGenePairs[[g]] = which(genePairs.pval[,1] < threshold & genePairs.pval[,2] < threshold)
