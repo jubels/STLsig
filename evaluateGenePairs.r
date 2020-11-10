@@ -114,7 +114,7 @@ evaluateGenePairs = function(surv, gepAll, nbrs = 10, sets, toi = "YES", repeats
         names(zpfs) <- treatment
       
         for(i in 1:length(treatment)){
-          true.nbr[,i] <- rownames(distanceA)[sort(distanceA[,i], decreasing = FALSE, index = TRUE)$ix[2:(nbrs+1)]]
+          true.nbr[,i] <- rownames(distanceA)[sort(distanceA[,i], decreasing = FALSE, index = TRUE)$ix[1:10]]
           true.dpfs[i] <- mean(surv.diff[true.nbr[,i],i], na.rm = TRUE)
         } 
       
@@ -142,7 +142,7 @@ evaluateGenePairs = function(surv, gepAll, nbrs = 10, sets, toi = "YES", repeats
         names(zpfs) <- treatment.2
       
         for(i in 1:length(treatment.2)){
-          true.nbr[,i] <- rownames(distanceB)[sort(distanceB[,i], decreasing = FALSE, index = TRUE)$ix[2:(nbrs+1)]]
+          true.nbr[,i] <- rownames(distanceB)[sort(distanceB[,i], decreasing = FALSE, index = TRUE)$ix[1:10]]
           true.dpfs[i] <- mean(surv.diff.2[true.nbr[,i],i], na.rm = TRUE)
         } 
       
